@@ -7,6 +7,9 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  selectedSubscription='Advanced';
+
   @ViewChild('f') signupForm: NgForm;
   defaultQuestion = 'pet';
   answer= '';
@@ -49,5 +52,15 @@ export class AppComponent {
     this.user.gender = this.signupForm.value.gender;
 
     this.signupForm.reset();
+  }
+
+  // Assignment portion:
+
+  subscriptions = ['Basic', 'Advanced', 'Pro'];
+
+  @ViewChild('signupForm') signForm: NgForm;
+
+  onSubmitt(){
+    console.log(this.signForm.value)
   }
 }
